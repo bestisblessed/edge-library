@@ -1,0 +1,19 @@
+Week,Day,Date,Time,Boxscore,Outcome,OT,Rec,Home/Away,Opp,Tm,OppPts,1stD,TotYd,PassY,RushY,TO_lost,Opp1stD,OppTotYd,OppPassY,OppRushY,TO_won,Offense,Defense,Sp. Tms
+1,Sun,September 7,4:25PM ET,boxscore,L,,0-1,@,Green Bay Packers,13,27,16,246,200,46,1,14,266,188,78,,-1.14,-11.63,-3.37
+2,Sun,September 14,1:00PM ET,boxscore,W,,1-1,,Chicago Bears,52,21,25,511,334,177,,19,339,205,134,2,32.57,2.08,-7.38
+3,Mon,September 22,8:15PM ET,boxscore,W,,2-1,@,Baltimore Ravens,38,30,24,426,202,224,,21,318,233,85,1,23.46,-8.78,-1.18
+4,Sun,September 28,1:00PM ET,boxscore,W,,3-1,,Cleveland Browns,34,10,16,277,168,109,1,16,249,170,79,3,-2.66,19.23,6.68
+5,Sun,October 5,4:25PM ET,boxscore,W,,4-1,@,Cincinnati Bengals,37,24,23,365,247,118,1,21,322,237,85,3,16.66,-2.71,1.68
+6,Sun,October 12,8:20PM ET,boxscore,L,,4-2,@,Kansas City Chiefs,17,30,18,297,199,98,,26,355,243,112,,3.78,-19.22,2.57
+7,Mon,October 20,7:00PM ET,boxscore,W,,5-2,,Tampa Bay Buccaneers,24,9,17,379,215,164,2,15,251,210,41,2,0.05,19.03,-2.74
+8,,,,,,,,,Bye Week,,,,,,,,,,,,,,,
+9,Sun,November 2,1:00PM ET,boxscore,L,,5-3,,Minnesota Vikings,24,27,15,305,240,65,1,20,258,116,142,1,3.07,-3.11,-1.39
+10,Sun,November 9,4:25PM ET,boxscore,W,,6-3,@,Washington Commanders,44,22,30,546,320,226,,14,288,195,93,,37.36,-6.77,-6.22
+11,Sun,November 16,8:20PM ET,boxscore,L,,6-4,@,Philadelphia Eagles,9,16,13,317,243,74,1,16,272,124,148,,-18.18,10.27,-0.41
+12,Sun,November 23,1:00PM ET,boxscore,W,OT,7-4,,New York Giants,34,27,23,494,257,237,1,25,517,395,122,1,18.27,-16.15,3.88
+13,Thu,November 27,1:00PM ET,boxscore,L,,7-5,,Green Bay Packers,24,31,20,352,233,119,,18,359,234,125,,11.11,-21.08,1.51
+14,Thu,December 4,8:15PM ET,boxscore,W,,8-5,,Dallas Cowboys,44,30,20,408,299,109,,25,417,326,91,3,20.05,-2.20,-4.50
+15,Sun,December 14,4:25PM ET,boxscore,L,,8-6,@,Los Angeles Rams,34,41,21,396,326,70,,30,519,360,159,1,17.65,-22.55,-0.44
+16,Sun,December 21,4:25PM ET,boxscore,L,,8-7,,Pittsburgh Steelers,24,29,23,361,346,15,,23,481,251,230,1,7.52,-15.14,2.83
+17,Thu,December 25,4:30PM ET,boxscore,L,,8-8,@,Minnesota Vikings,10,23,16,231,163,68,6,11,161,3,158,,-19.24,9.68,-1.13
+18,Sun,January 4,4:25PM ET,boxscore,W,,9-8,@,Chicago Bears,19,16,26,433,311,122,1,16,270,205,65,1,11.73,-3.31,-1.69

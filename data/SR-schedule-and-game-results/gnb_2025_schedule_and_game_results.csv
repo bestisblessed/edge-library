@@ -1,0 +1,22 @@
+Week,Day,Date,Time,Boxscore,Outcome,OT,Rec,Home/Away,Opp,Tm,OppPts,1stD,TotYd,PassY,RushY,TO_lost,Opp1stD,OppTotYd,OppPassY,OppRushY,TO_won,Offense,Defense,Sp. Tms
+,,Playoffs,,,,,,,,,,,,,,,,,,,,,,
+1,Sun,September 7,4:25PM ET,boxscore,W,,1-0,,Detroit Lions,27,13,14,266,188,78,,16,246,200,46,1,11.63,1.14,3.37
+2,Thu,September 11,8:15PM ET,boxscore,W,,2-0,,Washington Commanders,27,18,22,404,269,135,,15,230,179,51,,8.82,12.80,-6.35
+3,Sun,September 21,1:00PM ET,boxscore,L,,2-1,@,Cleveland Browns,10,13,14,230,149,81,1,15,221,125,96,1,-7.43,5.50,-1.92
+4,Sun,September 28,8:20PM ET,boxscore,T,OT,2-1-1,@,Dallas Cowboys,40,40,32,489,325,164,1,26,436,319,117,,27.91,-23.86,-0.46
+5,,,,,,,,,Bye Week,,,,,,,,,,,,,,,
+6,Sun,October 12,4:25PM ET,boxscore,W,,3-1-1,,Cincinnati Bengals,27,18,24,409,256,153,1,20,268,213,55,,16.53,-5.46,-2.27
+7,Sun,October 19,4:25PM ET,boxscore,W,,4-1-1,@,Arizona Cardinals,27,23,19,262,168,94,,23,330,236,94,1,9.17,-5.06,-0.05
+8,Sun,October 26,8:20PM ET,boxscore,W,,5-1-1,@,Pittsburgh Steelers,35,25,22,454,360,94,,16,295,202,93,1,22.81,2.91,-12.08
+9,Sun,November 2,1:00PM ET,boxscore,L,,5-2-1,,Carolina Panthers,13,16,20,369,265,104,2,19,265,102,163,1,5.28,-6.92,-1.36
+10,Mon,November 10,8:15PM ET,boxscore,L,,5-3-1,,Philadelphia Eagles,7,10,18,261,157,104,2,13,294,183,111,1,-7.43,5.03,0.20
+11,Sun,November 16,1:00PM ET,boxscore,W,,6-3-1,@,New York Giants,27,20,19,296,168,128,,22,336,194,142,2,17.66,-10.68,-1.11
+12,Sun,November 23,1:00PM ET,boxscore,W,,7-3-1,,Minnesota Vikings,23,6,22,288,142,146,,10,145,52,93,3,4.80,14.40,0.76
+13,Thu,November 27,1:00PM ET,boxscore,W,,8-3-1,@,Detroit Lions,31,24,18,359,234,125,,20,352,233,119,,21.08,-11.11,-1.51
+14,Sun,December 7,4:25PM ET,boxscore,W,,9-3-1,,Chicago Bears,28,21,17,337,220,117,1,21,315,177,138,1,14.34,-5.74,-2.53
+15,Sun,December 14,4:25PM ET,boxscore,L,,9-4-1,@,Denver Broncos,26,34,19,362,247,115,2,21,391,302,89,1,4.41,-11.99,-2.57
+16,Sat,December 20,8:20PM ET,boxscore,L,OT,9-5-1,@,Chicago Bears,16,22,24,384,192,192,1,20,400,250,150,,6.81,-7.61,-6.85
+17,Sat,December 27,8:00PM ET,boxscore,L,,9-6-1,,Baltimore Ravens,24,41,18,363,284,79,2,30,414,107,307,,7.73,-27.78,1.40
+18,Sun,January 4,1:00PM ET,boxscore,L,,9-7-1,@,Minnesota Vikings,3,16,12,121,-7,128,,23,363,226,137,1,-13.04,-6.17,5.75
+,,Playoffs,,,,,,,,,,,,,,,,,,,,,,
+Wild Card,Sat,January 10,8:00PM ET,boxscore,L,,9-8-1,@,Chicago Bears,27,31,21,421,322,99,,24,445,352,93,2,16.37,-11.61,-4.37

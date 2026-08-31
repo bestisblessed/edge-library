@@ -1,0 +1,19 @@
+Week,Day,Date,Time,Boxscore,Outcome,OT,Rec,Home/Away,Opp,Tm,OppPts,1stD,TotYd,PassY,RushY,TO_lost,Opp1stD,OppTotYd,OppPassY,OppRushY,TO_won,Offense,Defense,Sp. Tms
+1,Sun,September 7,1:00PM ET,boxscore,L,,0-1,,Pittsburgh Steelers,32,34,23,394,212,182,1,19,271,218,53,,10.83,-11.44,-5.41
+2,Sun,September 14,1:00PM ET,boxscore,L,,0-2,,Buffalo Bills,10,30,11,154,54,100,1,25,403,179,224,,-9.90,-14.17,4.13
+3,Sun,September 21,1:00PM ET,boxscore,L,,0-3,@,Tampa Bay Buccaneers,27,29,21,267,168,99,2,19,347,225,122,,-10.01,-0.89,9.29
+4,Mon,September 29,7:15PM ET,boxscore,L,,0-4,@,Miami Dolphins,21,27,23,404,207,197,3,19,300,177,123,,8.88,-10.59,-4.42
+5,Sun,October 5,1:00PM ET,boxscore,L,,0-5,,Dallas Cowboys,22,37,25,378,234,144,1,22,416,236,180,,0.46,-18.19,0.46
+6,Sun,October 12,9:30AM ET,boxscore,L,,0-6,,Denver Broncos,11,13,8,82,-10,92,,12,246,168,78,1,-23.40,9.34,10.64
+7,Sun,October 19,1:00PM ET,boxscore,L,,0-7,,Carolina Panthers,6,13,12,220,139,81,2,17,302,177,125,,-13.77,4.79,-0.53
+8,Sun,October 26,1:00PM ET,boxscore,W,,1-7,@,Cincinnati Bengals,39,38,25,502,248,254,,24,398,217,181,,22.70,-19.56,-2.16
+9,,,,,,,,,Bye Week,,,,,,,,,,,,,,,
+10,Sun,November 9,1:00PM ET,boxscore,W,,2-7,,Cleveland Browns,27,20,12,169,42,127,1,23,278,120,158,,-8.07,3.23,12.87
+11,Thu,November 13,8:15PM ET,boxscore,L,,2-8,@,New England Patriots,14,27,15,245,105,140,1,23,336,271,65,,-3.43,-14.63,4.75
+12,Sun,November 23,1:00PM ET,boxscore,L,,2-9,@,Baltimore Ravens,10,23,15,282,204,78,2,16,241,143,98,,-8.56,-2.67,0.22
+13,Sun,November 30,1:00PM ET,boxscore,W,,3-9,,Atlanta Falcons,27,24,16,269,159,110,,25,389,222,167,1,0.29,-12.87,16.17
+14,Sun,December 7,1:00PM ET,boxscore,L,,3-10,,Miami Dolphins,10,34,12,207,142,65,3,23,358,119,239,,-20.45,-9.75,8.82
+15,Sun,December 14,1:00PM ET,boxscore,L,,3-11,@,Jacksonville Jaguars,20,48,19,284,154,130,3,24,438,330,108,1,-7.98,-19.78,3.33
+16,Sun,December 21,1:00PM ET,boxscore,L,,3-12,@,New Orleans Saints,6,29,12,195,131,64,2,23,412,328,84,1,-21.88,-4.86,2.07
+17,Sun,December 28,1:00PM ET,boxscore,L,,3-13,,New England Patriots,10,42,14,307,143,164,1,28,440,285,155,,-8.28,-32.02,9.25
+18,Sun,January 4,4:25PM ET,boxscore,L,,3-14,@,Buffalo Bills,8,35,9,122,53,69,,30,470,259,211,,-11.95,-22.89,8.71

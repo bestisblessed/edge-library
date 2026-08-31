@@ -1,0 +1,19 @@
+Week,Day,Date,Time,Boxscore,Outcome,OT,Rec,Home/Away,Opp,Tm,OppPts,1stD,TotYd,PassY,RushY,TO_lost,Opp1stD,OppTotYd,OppPassY,OppRushY,TO_won,Offense,Defense,Sp. Tms
+1,Sun,September 7,1:00PM ET,boxscore,W,,1-0,@,New Orleans Saints,20,13,19,276,130,146,,21,315,208,107,,5.26,-1.36,1.92
+2,Sun,September 14,4:05PM ET,boxscore,W,,2-0,,Carolina Panthers,27,22,16,293,211,82,1,26,352,303,49,2,7.39,0.07,0.13
+3,Sun,September 21,4:25PM ET,boxscore,L,,2-1,@,San Francisco 49ers,15,16,16,260,154,106,,19,355,282,73,1,0.54,0.76,-2.12
+4,Thu,September 25,8:15PM ET,boxscore,L,,2-2,,Seattle Seahawks,20,23,18,253,164,89,2,20,384,229,155,1,-0.23,-10.15,6.60
+5,Sun,October 5,4:05PM ET,boxscore,L,,2-3,,Tennessee Titans,21,22,16,360,192,168,3,20,327,249,78,2,-0.32,1.31,-1.53
+6,Sun,October 12,1:00PM ET,boxscore,L,,2-4,@,Indianapolis Colts,27,31,25,400,312,88,1,25,355,205,150,1,12.05,-14.77,0.87
+7,Sun,October 19,4:25PM ET,boxscore,L,,2-5,,Green Bay Packers,23,27,23,330,236,94,1,19,262,168,94,,5.06,-9.17,0.05
+8,,,,,,,,,Bye Week,,,,,,,,,,,,,,,
+9,Mon,November 3,8:15PM ET,boxscore,W,,3-5,@,Dallas Cowboys,27,17,23,340,221,119,,22,333,210,123,3,9.38,2.98,-3.86
+10,Sun,November 9,4:05PM ET,boxscore,L,,3-6,@,Seattle Seahawks,22,44,21,335,206,129,2,22,372,174,198,3,-14.57,-4.43,-1.50
+11,Sun,November 16,4:05PM ET,boxscore,L,,3-7,,San Francisco 49ers,22,41,24,488,452,36,3,24,281,186,95,,0.06,-9.27,-11.58
+12,Sun,November 23,4:05PM ET,boxscore,L,OT,3-8,,Jacksonville Jaguars,24,27,25,326,271,55,,18,371,237,134,4,-0.16,9.63,-10.32
+13,Sun,November 30,1:00PM ET,boxscore,L,,3-9,@,Tampa Bay Buccaneers,17,20,22,386,291,95,2,13,279,184,95,,2.78,-1.32,-6.58
+14,Sun,December 7,4:25PM ET,boxscore,L,,3-10,,Los Angeles Rams,17,45,17,314,263,51,1,30,530,281,249,,-0.21,-31.28,6.66
+15,Sun,December 14,1:00PM ET,boxscore,L,,3-11,@,Houston Texans,20,40,22,307,235,72,2,23,399,256,143,,2.62,-17.74,-8.24
+16,Sun,December 21,4:05PM ET,boxscore,L,,3-12,,Atlanta Falcons,19,26,16,320,188,132,1,24,342,190,152,2,5.37,-6.53,-3.69
+17,Sun,December 28,1:00PM ET,boxscore,L,,3-13,@,Cincinnati Bengals,14,37,12,233,191,42,,29,429,309,120,,-0.36,-26.80,6.25
+18,Sun,January 4,4:25PM ET,boxscore,L,,3-14,@,Los Angeles Rams,20,37,17,317,238,79,2,25,395,252,143,,1.83,-18.22,1.83

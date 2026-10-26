@@ -6,9 +6,9 @@ from pathlib import Path
 
 import pandas as pd
 
-# nfl-ai main commit SHA for the copied data/games.csv (GitHub contents API).
-NFL_AI_DATA_SHA = "ea0ce2810fc9f10f7cc7e3f3912807316102f218"
-NFL_AI_DATA_COMMITTED_AT = "2026-10-26T05:09:03Z"
+# Twin's committed data/ snapshot on edge-library main (d0f3074 "Refresh NFL data").
+DATA_SNAPSHOT_SHA = "d0f3074ac22eff9b45ab42329c51cbda227bff0a"
+DATA_SNAPSHOT_COMMITTED_AT = "2026-10-26T16:18:57-04:00"
 
 MINIMUM_SEASON = 2020
 SITUATIONAL_MINIMUM_SEASON = 2010

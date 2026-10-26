@@ -39,7 +39,7 @@ Reads only `data/games.csv`.
 
 ## Results on current repository data
 
-Data: nfl-ai main `ea0ce2810fc9f10f7cc7e3f3912807316102f218`.
+Data: Twin's committed `data/` on edge-library main `d0f3074` ("Refresh NFL data").
 
 Philadelphia as a 2+ point NFC East dog since 2016 is **1-10 SU, 2-9 ATS**
 (n=11 graded), plus **2 live** games: 2026-10-26 vs DAL (home +4.5) and

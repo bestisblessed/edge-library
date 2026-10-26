@@ -37,7 +37,7 @@ Reads only `data/games.csv`.
 
 ## Results on current repository data
 
-Data: nfl-ai main `ea0ce2810fc9f10f7cc7e3f3912807316102f218`.
+Data: Twin's committed `data/` on edge-library main `d0f3074` ("Refresh NFL data").
 
 Dallas **6-1 SU, 6-1 ATS** (n=7 graded) plus **1 live** qualifier
 (`2026_07_DAL_PHI`). Mean win margin **15.714...** (110/7), mean cover

@@ -48,7 +48,7 @@ Reads only `data/games.csv` (relative to the repo root).
 
 ## Results on current repository data
 
-Data: nfl-ai main `ea0ce2810fc9f10f7cc7e3f3912807316102f218` (committed 2026-10-26T05:09:03Z), copied into `data/games.csv`.
+Data: Twin's committed `data/` on edge-library main `d0f3074` ("Refresh NFL data").
 
 Detroit **14-0-0** to the over in the claimed window (n=14 graded), plus **1 live**
 qualifier (GB, 2026-10-25, total 53.5, rest 14, prior 45 vs ARI). Scores for

@@ -54,7 +54,7 @@ Reads only `data/games.csv`.
 
 ## Results on current repository data
 
-Data: nfl-ai main `ea0ce2810fc9f10f7cc7e3f3912807316102f218`.
+Data: Twin's committed `data/` on edge-library main `d0f3074` ("Refresh NFL data").
 
 Philadelphia **0-9 SU, 2-7 ATS** (n=9 graded, no pushes) plus **1 live**
 qualifier: DAL, 2026-10-26, home spread -4.5. That game is not final in

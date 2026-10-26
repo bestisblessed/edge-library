@@ -18,4 +18,6 @@ cd ~/Code/edge-library && ./update_data.sh
 
 - `Main.ipynb` — trend notebook
 - `scripts/` — trend scripts; they read CSVs under `data/`
+- `nfl_trends/` — parameterized trend audits (read `data/games.csv` only)
+- `trends/` — per-trend README, qualifying-games CSV, and chart
 - `sbbreakers/` — SBBreakers dictionary notes (not scraper data)

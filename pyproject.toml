@@ -1,0 +1,21 @@
+[project]
+name = "edge-library"
+version = "0.1.0"
+description = "NFL trend scripts and audits that read from data/"
+requires-python = ">=3.11"
+dependencies = [
+  "matplotlib",
+  "numpy",
+  "pandas",
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["."]
+filterwarnings = [
+  "ignore::DeprecationWarning:matplotlib.*",
+]

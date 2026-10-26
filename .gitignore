@@ -1,5 +1,8 @@
 .DS_Store
 **/.DS_Store
+__pycache__/
+.pytest_cache/
+*.pyc
 
 # Jupyter Notebook
 .ipynb_checkpoints/

@@ -19,6 +19,8 @@ saved.
 
 - `Main.ipynb` — NFL Edge Dictionary notebook
 - `scripts/` — trend scripts (read `data/`)
-- `data/` — committed snapshot of nfl-ai scraper masters
+- `nfl_trends/` — parameterized trend audits (read `data/games.csv`)
+- `trends/` — per-trend README, qualifying-games CSV, and chart
+- `data/` — committed snapshot of nfl-ai `Scrapers/data/`
 - `sbbreakers/` — SBBreakers trend dictionary notes
 - `update_data.sh` — local refresh from `~/Code/nfl-ai`

@@ -11,8 +11,8 @@ Refresh it from the repo root (Twin's Mac, about weekly):
 cd ~/Code/edge-library && ./update_data.sh
 ```
 
-`update_data.sh` is the same three commands as the old notebook cell:
-`rm -rf data`, `mkdir data`, `cp -r ~/Code/nfl-ai/Scrapers/data/* data/`.
+`update_data.sh` copies `~/Code/nfl-ai/Scrapers/data/` into `data/` and
+`~/Code/nfl-ai/Scrapers/final_data_pfr/` into `data/final_data_pfr/`.
 
 ## Layout
 

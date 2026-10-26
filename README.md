@@ -11,8 +11,9 @@ About weekly, on Twin's Mac:
 cd ~/Code/edge-library && ./update_data.sh
 ```
 
-That replaces `data/` with `~/Code/nfl-ai/Scrapers/data/`. Commit the snapshot
-when you want it saved.
+That replaces `data/` with `~/Code/nfl-ai/Scrapers/data/` and
+`~/Code/nfl-ai/Scrapers/final_data_pfr/`. Commit the snapshot when you want it
+saved.
 
 ## Layout
 

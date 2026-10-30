@@ -42,13 +42,16 @@ can also be run from the terminal with `python scripts/opponent_stats_after_DET.
 Every notebook section runs a real script from `scripts/`.
 Edit a trend's script rather than copying its code into the notebook.
 
-A new trend is one real `.py` file directly in `scripts/` plus its own notebook section:
-a header, a `%run scripts/<script>.py --notebook` cell, and a source-view cell.
+A new trend is one real `.py` file directly in `scripts/` plus one notebook section:
+a title cell, the season picker, a `%run scripts/<script>.py --notebook` cell,
+a `%load scripts/<script>.py` cell, and a source-view cell.
 Do not add a second file, a subfolder, a helper module, or a placeholder for that trend.
 Do not commit the tables or charts the notebook draws.
 
-Current trend scripts, re-run on the committed `data/` snapshot:
+Current trend scripts, one per notebook section. Records below were re-run on the committed `data/` snapshot:
 
+- `scripts/opponent_stats_after_DET.py`
+- `scripts/broncos_after_big_loss.py`
 - `scripts/08_rested_after_scoring.py` — DET 14-0-0 OVER (n=14, live 1)
 - `scripts/09_home_underdog.py` — PHI 0-9 SU / 2-7 ATS (n=9, live 1)
 - `scripts/10_division_underdog.py` — PHI 1-10 SU / 2-9 ATS (n=11, live 2)

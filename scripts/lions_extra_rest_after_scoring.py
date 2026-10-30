@@ -855,16 +855,13 @@ def analyze(
     )
 
 
-TREND_NUMBER = "08"
-
-
 def _headline(result: EdgeResult) -> str:
     meta = result.metadata
     team = meta.get("team", "")
     live = meta.get("live_strategy_rows", 0)
     if "claimed_overs" in meta:
         return (
-            f"{TREND_NUMBER} {team} {meta['claimed_overs']}-{meta['claimed_unders']}-"
+            f"{team} {meta['claimed_overs']}-{meta['claimed_unders']}-"
             f"{meta['claimed_pushes']} OVER (live {live})"
         )
     su = f"{meta.get('claimed_su_wins', 0)}-{meta.get('claimed_su_losses', 0)}"
@@ -875,7 +872,7 @@ def _headline(result: EdgeResult) -> str:
         su = f"{su}-{su_ties}"
     if ats_pushes:
         ats = f"{ats}-{ats_pushes}"
-    return f"{TREND_NUMBER} {team} SU {su} | ATS {ats} (live {live})"
+    return f"{team} SU {su} | ATS {ats} (live {live})"
 
 
 def print_report(result: EdgeResult) -> None:

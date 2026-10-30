@@ -15,7 +15,9 @@ graded, not dropped.
 - Calendar start date 2021-01-01 (includes 2020 week 17, played 3 Jan 2021)
 
 The calendar cut is the reading that matches 0-9 SU / 2-7 ATS on repository
-closing lines, so it is the default ``--start-date``.
+closing lines, so it is the default ``--start-date``. ``--start-season``
+replaces that default. Pass ``--start-date`` as well when both cuts should
+apply.
 
 Reads only ``data/games.csv`` (repo-root relative). Run from the repository root:
 
@@ -829,6 +831,37 @@ def _window(
     return window
 
 
+class _OmittedDate:
+    """Sentinel for a calendar cut the caller did not set."""
+
+
+_OMITTED_DATE = _OmittedDate()
+
+
+def resolve_start_date(
+    start_date: str | None | _OmittedDate,
+    start_season: int | None,
+) -> str | None:
+    """Apply the default calendar cut only when no season cut was requested.
+
+    An explicit date still combines with ``start_season``, including a date
+    equal to the default. ``None`` or ``""`` means no calendar cut.
+    """
+    if isinstance(start_date, _OmittedDate):
+        if start_season is not None:
+            return None
+        return DEFAULT_START_DATE
+    if start_date is None or start_date == "":
+        return None
+    return start_date
+
+
+def start_date_from_args(args: argparse.Namespace) -> str | None | _OmittedDate:
+    if not hasattr(args, "start_date"):
+        return _OMITTED_DATE
+    return args.start_date
+
+
 def summaries(development_graded: pd.DataFrame, *, team: str) -> pd.DataFrame:
     summary = market_summary(
         development_graded,
@@ -849,10 +882,11 @@ def analyze(
     *,
     team: str = DEFAULT_TEAM,
     start_season: int | None = None,
-    start_date: str | None = DEFAULT_START_DATE,
+    start_date: str | None | _OmittedDate = _OMITTED_DATE,
     min_spread: float = DEFAULT_MIN_SPREAD,
     include_playoffs: bool = True,
 ) -> EdgeResult:
+    start_date = resolve_start_date(start_date, start_season)
     source_rows = len(games)
     team_games = expand_team_games(games)
     audit = _window(
@@ -1108,12 +1142,20 @@ def show_charts(result: EdgeResult, *, notebook: bool = False) -> None:
         plt.show(block=True)
 
 
-def parse_args() -> argparse.Namespace:
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Grade a team as a home underdog against closing spreads."
     )
     parser.add_argument("--team", default=DEFAULT_TEAM)
-    parser.add_argument("--start-date", default=DEFAULT_START_DATE)
+    parser.add_argument(
+        "--start-date",
+        default=argparse.SUPPRESS,
+        metavar="YYYY-MM-DD",
+        help=(
+            f"Calendar cut (default {DEFAULT_START_DATE}). "
+            "Not applied when --start-season is set unless this flag is passed."
+        ),
+    )
     parser.add_argument("--start-season", type=int, default=None)
     parser.add_argument("--min-spread", type=float, default=DEFAULT_MIN_SPREAD)
     parser.add_argument(
@@ -1139,7 +1181,7 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Display notebook tables and inline charts",
     )
-    return parser.parse_args()
+    return parser.parse_args(argv)
 
 
 def main() -> int:
@@ -1153,7 +1195,7 @@ def main() -> int:
         games,
         team=args.team,
         start_season=args.start_season,
-        start_date=args.start_date or None,
+        start_date=start_date_from_args(args),
         min_spread=args.min_spread,
         include_playoffs=args.include_playoffs and not args.regular_season_only,
     )

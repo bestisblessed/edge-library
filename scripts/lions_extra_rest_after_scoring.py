@@ -667,18 +667,9 @@ def qualifying_games_table(frame: pd.DataFrame) -> pd.DataFrame:
     return table.reset_index(drop=True)
 
 
-def summaries(development_graded: pd.DataFrame, *, team: str) -> pd.DataFrame:
-    summary = market_summary(
-        development_graded,
-        ["team"],
-        "total_result",
-        "over",
-        ("actual_total", "total_line", "total_margin"),
-    )
-    if summary.empty:
-        summary = pd.DataFrame([_market_row(development_graded, team=team)])
-    summary.insert(1, "sample", "development")
-    return summary
+def summaries(qualifiers: pd.DataFrame, *, team: str) -> pd.DataFrame:
+    """Totals record for every graded qualifier the headline counts."""
+    return pd.DataFrame([_market_row(qualifiers, team=team)])
 
 
 def analyze(
@@ -706,13 +697,10 @@ def analyze(
 
     qualifiers = audit.loc[audit["qualifies"]].copy()
     graded_qualifiers = qualifiers.loc[qualifiers["total_result"].notna()].copy()
-    development, holdout = split_research_frame(audit)
-    development_graded = development.loc[
-        development["qualifies"] & development["total_result"].notna()
-    ]
+    _, holdout = split_research_frame(audit)
     holdout_graded = holdout.loc[holdout["qualifies"] & holdout["total_result"].notna()]
 
-    summary = summaries(development_graded, team=team)
+    summary = summaries(qualifiers, team=team)
 
     league_window = _apply_window(
         team_games,
@@ -972,7 +960,7 @@ def select_seasons(result: EdgeResult, seasons) -> EdgeResult:
     qualifiers = result.audit.loc[result.audit["qualifies"]].copy()
     graded = qualifiers.loc[qualifiers["total_result"].notna()]
     result.metadata.update({"claimed_overs": int(graded.total_result.eq("over").sum()), "claimed_unders": int(graded.total_result.eq("under").sum()), "claimed_pushes": int(graded.total_result.eq("push").sum()), "live_strategy_rows": int(qualifiers.is_live.sum())})
-    result.summary = pd.DataFrame([_market_row(qualifiers, team=result.metadata["team"])])
+    result.summary = summaries(qualifiers, team=result.metadata["team"])
     result.secondary["qualifying_games"] = qualifying_games_table(qualifiers)
     return result
 

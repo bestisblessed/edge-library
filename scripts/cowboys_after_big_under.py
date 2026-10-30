@@ -831,19 +831,9 @@ def _window(
     return window
 
 
-def summaries(development_graded: pd.DataFrame, *, team: str) -> pd.DataFrame:
-    summary = market_summary(
-        development_graded,
-        ["team"],
-        "ats_result",
-        "cover",
-        ("team_margin", "team_ats_margin", "prior_under_margin"),
-    )
-    if summary.empty:
-        summary = pd.DataFrame([record_row(development_graded, team=team)])
-    if "sample" not in summary.columns:
-        summary.insert(1, "sample", "development")
-    return summary
+def summaries(qualifiers: pd.DataFrame, *, team: str) -> pd.DataFrame:
+    """Straight-up and ATS records for every graded qualifier the headline counts."""
+    return pd.DataFrame([record_row(qualifiers, team=team)])
 
 
 def analyze(
@@ -872,13 +862,10 @@ def analyze(
 
     qualifiers = audit.loc[audit["qualifies"]].copy()
     graded = qualifiers.loc[qualifiers["ats_result"].notna()].copy()
-    development, holdout = split_research_frame(audit)
-    development_graded = development.loc[
-        development["qualifies"] & development["ats_result"].notna()
-    ]
+    _, holdout = split_research_frame(audit)
     holdout_graded = holdout.loc[holdout["qualifies"] & holdout["ats_result"].notna()]
 
-    summary = summaries(development_graded, team=team)
+    summary = summaries(qualifiers, team=team)
 
     live = qualifiers.loc[qualifiers["is_live"].fillna(False)]
     last_completed = (
@@ -1174,7 +1161,7 @@ def select_seasons(result: EdgeResult, seasons) -> EdgeResult:
     result.audit = result.audit.loc[result.audit["season"].isin(seasons)].copy()
     qualifiers = result.audit.loc[result.audit["qualifies"]].copy()
     result.metadata.update(claimed_counts(qualifiers))
-    result.summary = pd.DataFrame([record_row(qualifiers, team=result.metadata["team"])])
+    result.summary = summaries(qualifiers, team=result.metadata["team"])
     result.secondary["qualifying_games"] = qualifying_table(qualifiers, QUALIFYING_COLUMNS)
     return result
 

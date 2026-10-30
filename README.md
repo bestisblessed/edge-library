@@ -28,6 +28,8 @@ saved.
 
 ## Run a trend
 
+From a fresh checkout, run `pip install -r requirements.txt` before opening the notebook.
+
 Open `Main.ipynb` in Jupyter from the repository root and run the first setup
 cell. Run the Detroit trend cell, select seasons (use Command/Ctrl for multiple
 selections), and click **Run trend**. Run a source-view cell and expand its

@@ -7,6 +7,9 @@ dependencies = [
   "matplotlib",
   "numpy",
   "pandas",
+  "jinja2",
+  "ipython",
+  "ipywidgets",
 ]
 
 [project.optional-dependencies]

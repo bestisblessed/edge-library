@@ -1,4 +1,9 @@
 matplotlib
 numpy
 pandas
+jinja2
+ipython
+ipywidgets
+
+# dev
 pytest

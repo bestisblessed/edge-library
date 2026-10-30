@@ -1087,7 +1087,8 @@ def show_notebook_tables(result: EdgeResult) -> None:
     import ipywidgets as widgets
     from IPython.display import HTML, display
 
-    summary = result.summary
+    qualifiers = result.audit.loc[result.audit["qualifies"]]
+    summary = pd.DataFrame([record_row(qualifiers, team=result.metadata["team"])])
     games = result.secondary["qualifying_games"]
     display(HTML(f"<p><strong>{_headline(result)}</strong></p>"))
     display(summary.style.hide(axis="index"))
@@ -1113,7 +1114,7 @@ def parse_args() -> argparse.Namespace:
         description="Grade a team as a home underdog against closing spreads."
     )
     parser.add_argument("--team", default=DEFAULT_TEAM)
-    parser.add_argument("--start-date", default=DEFAULT_START_DATE)
+    parser.add_argument("--start-date", default=None, help="Start date; defaults to the trend date unless --start-season is set.")
     parser.add_argument("--start-season", type=int, default=None)
     parser.add_argument("--min-spread", type=float, default=DEFAULT_MIN_SPREAD)
     parser.add_argument(
@@ -1153,7 +1154,7 @@ def main() -> int:
         games,
         team=args.team,
         start_season=args.start_season,
-        start_date=args.start_date or None,
+        start_date=(args.start_date or None) if args.start_date is not None else (DEFAULT_START_DATE if args.start_season is None else None),
         min_spread=args.min_spread,
         include_playoffs=args.include_playoffs and not args.regular_season_only,
     )

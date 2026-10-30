@@ -898,7 +898,8 @@ def show_notebook_tables(result: EdgeResult) -> None:
     import ipywidgets as widgets
     from IPython.display import HTML, display
 
-    summary = result.summary
+    qualifiers = result.audit.loc[result.audit["qualifies"]]
+    summary = pd.DataFrame([_market_row(qualifiers, team=result.metadata["team"])])
     games = result.secondary["qualifying_games"]
     display(HTML(f"<p><strong>{_headline(result)}</strong></p>"))
     display(summary.style.hide(axis="index"))

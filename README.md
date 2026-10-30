@@ -37,13 +37,12 @@ output to see the current script.
 
 The Detroit trend displays a summary, expandable game details, and charts; it
 can also be run from the terminal with `python scripts/opponent_stats_after_DET.py`.
-Notebook output requires IPython, Matplotlib, pandas, and ipywidgets. The bye
-and home-underdog scripts are examples only, with no trend analysis yet.
+Every notebook section runs a real script from `scripts/`.
 Edit a trend's script rather than copying its code into the notebook.
 
-Every audited trend is a script in `scripts/` that the master notebook runs
-and browses. Adding a trend means adding one script plus a notebook section:
+A new trend is a real script in `scripts/` plus its own notebook section:
 a header, a `%run scripts/<script>.py --notebook` cell, and a source-view cell.
+Do not add placeholder or stub scripts.
 
 Current trend scripts, re-run on the committed `data/` snapshot:
 

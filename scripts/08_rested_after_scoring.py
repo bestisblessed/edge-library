@@ -27,6 +27,8 @@ Reads only ``data/games.csv`` (repo-root relative). Run from the repository root
     python scripts/08_rested_after_scoring.py --notebook
 """
 
+# Source: @SBBreakers, 2026-10-25 — https://x.com/SBBreakers/status/2114383482868658651
+
 from __future__ import annotations
 
 import argparse
@@ -493,7 +495,6 @@ NORMAL_REST_DAYS = 7
 DEFAULT_MIN_REST_DAYS = NORMAL_REST_DAYS + 1
 DEFAULT_MIN_PRIOR_POINTS = 24
 BYE_REST_DAYS = 13
-TREND_DIR = repo_root() / "trends" / "08-rested-after-scoring-totals"
 QUALIFYING_COLUMNS = [
     "date",
     "season",
@@ -854,22 +855,6 @@ def analyze(
     return EdgeResult(
         EDGE_ID, summary, audit.reset_index(drop=True), secondary, metadata
     )
-
-
-def write_public_artifacts(
-    result: EdgeResult, dest: Path | str | None = None
-) -> dict[str, Path]:
-    """Write the human-facing qualifying CSV and scatter PNG into the trend folder."""
-    target = Path(dest) if dest is not None else TREND_DIR
-    figures = target / "figures"
-    figures.mkdir(parents=True, exist_ok=True)
-    csv_path = target / "qualifying_games.csv"
-    png_path = figures / "combined-points-vs-total.png"
-    result.secondary["qualifying_games"].to_csv(csv_path, index=False)
-    figure = chart_for_result(result)
-    figure.savefig(png_path, dpi=160, bbox_inches="tight", facecolor="white")
-    plt.close(figure)
-    return {"qualifying_games": csv_path, "chart": png_path}
 
 
 TREND_NUMBER = "08"

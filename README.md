@@ -17,10 +17,12 @@ saved.
 
 ## Layout
 
+One `.py` file per trend, directly in `scripts/`. No subfolders in `scripts/` and no helper modules. No committed figures, charts, CSVs, or other generated output. The notebook regenerates them on every run.
+
 - `Main.ipynb` — NFL Edge Dictionary notebook
-- `scripts/` — source of truth for trend code; the notebook runs and browses these scripts
+- `scripts/` — one `.py` file per trend, directly in this folder
 - `images/` — notebook images
-- `trends/` — per-trend README, qualifying-games CSV, and chart
+- `trends/` — gone; do not commit generated figures, charts, or CSVs
 - `nfl_trends/` — gone; analyzers live in `scripts/`, not a separate package
 - `data/` — committed snapshot of nfl-ai scraper masters
 - `sbbreakers/` — SBBreakers trend dictionary notes
@@ -40,9 +42,10 @@ can also be run from the terminal with `python scripts/opponent_stats_after_DET.
 Every notebook section runs a real script from `scripts/`.
 Edit a trend's script rather than copying its code into the notebook.
 
-A new trend is a real script in `scripts/` plus its own notebook section:
+A new trend is one real `.py` file directly in `scripts/` plus its own notebook section:
 a header, a `%run scripts/<script>.py --notebook` cell, and a source-view cell.
-Do not add placeholder or stub scripts.
+Do not add a second file, a subfolder, a helper module, or a placeholder for that trend.
+Do not commit the tables or charts the notebook draws.
 
 Current trend scripts, re-run on the committed `data/` snapshot:
 

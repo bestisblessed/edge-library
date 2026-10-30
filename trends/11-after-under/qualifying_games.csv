@@ -1,9 +1,0 @@
-date,season,week,game_id,opponent,home_away,home_spread,final_score,su_result,ats_result,win_margin,margin_vs_spread,prior_game_date,prior_opponent,prior_combined_points,prior_total_line,prior_under_margin,is_live
-2021-12-26,2021,16,2021_16_WAS_DAL,WAS,vs,10.5,56-14,W,W,42.0,31.5,2021-12-19,NYG,27.0,43.0,16.0,False
-2022-09-18,2022,2,2022_02_CIN_DAL,CIN,vs,-7.5,20-17,W,W,3.0,10.5,2022-09-11,TB,22.0,49.5,27.5,False
-2022-10-16,2022,6,2022_06_DAL_PHI,PHI,@,6.5,17-26,L,L,-9.0,-2.5,2022-10-09,LAR,32.0,42.0,10.0,False
-2022-10-30,2022,8,2022_08_CHI_DAL,CHI,vs,10.5,49-29,W,W,20.0,9.5,2022-10-23,DET,30.0,49.5,19.5,False
-2023-10-29,2023,8,2023_08_LAR_DAL,LAR,vs,6.5,43-20,W,W,23.0,16.5,2023-10-16,LAC,37.0,49.5,12.5,False
-2024-01-07,2023,18,2023_18_DAL_WAS,WAS,@,-13.0,38-10,W,W,28.0,15.0,2023-12-30,DET,39.0,53.0,14.0,False
-2024-10-06,2024,5,2024_05_DAL_PIT,PIT,@,2.5,20-17,W,W,3.0,5.5,2024-09-26,NYG,35.0,45.0,10.0,False
-2026-10-26,2026,7,2026_07_DAL_PHI,PHI,@,-4.5,,,,,,2026-10-18,GB,36.0,53.5,17.5,True

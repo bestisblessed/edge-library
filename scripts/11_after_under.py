@@ -11,6 +11,11 @@ Reads only ``data/games.csv`` (repo-root relative). Run from the repository root
     python scripts/11_after_under.py --notebook
 """
 
+# Source: @SBBreakers, 2026-10-26 — https://x.com/SBBreakers/status/2114758201573040429
+# The post claims 6-0 SU / 6-0 ATS with +19.8 win / +14.8 cover and an
+# 18.5-point under last week. This data gives 6-1 SU / 6-1 ATS (n=7 graded,
+# 1 live), with the Dallas/Green Bay under by 17.5.
+
 from __future__ import annotations
 
 import argparse
@@ -764,29 +769,10 @@ def claimed_counts(frame: pd.DataFrame) -> dict[str, int]:
     }
 
 
-def write_public_artifacts(
-    result: EdgeResult,
-    dest: Path | str,
-    *,
-    figure_name: str,
-) -> dict[str, Path]:
-    target = Path(dest)
-    figures = target / "figures"
-    figures.mkdir(parents=True, exist_ok=True)
-    csv_path = target / "qualifying_games.csv"
-    png_path = figures / figure_name
-    result.secondary["qualifying_games"].to_csv(csv_path, index=False)
-    figure = chart_for_result(result)
-    figure.savefig(png_path, dpi=160, bbox_inches="tight", facecolor="white")
-    plt.close(figure)
-    return {"qualifying_games": csv_path, "chart": png_path}
-
 EDGE_ID = "after-under"
 DEFAULT_TEAM = "DAL"
 DEFAULT_MIN_UNDER_MARGIN = 10.0
 DEFAULT_START_DATE = "2021-12-01"
-TREND_DIR = repo_root() / "trends" / "11-after-under"
-FIGURE_NAME = "ats-margin.png"
 QUALIFYING_COLUMNS = [
     "date",
     "season",

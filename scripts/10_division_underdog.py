@@ -11,6 +11,10 @@ Reads only ``data/games.csv`` (repo-root relative). Run from the repository root
     python scripts/10_division_underdog.py --notebook
 """
 
+# Source: @SBBreakers, 2026-10-26 — https://x.com/SBBreakers/status/2114742668899324088
+# The post claims 0-11 ATS since 2016. This data gives 1-10 SU / 2-9 ATS
+# (n=11 graded, 2 live). The gap is the line data, not a bug in the filter.
+
 from __future__ import annotations
 
 import argparse
@@ -764,29 +768,10 @@ def claimed_counts(frame: pd.DataFrame) -> dict[str, int]:
     }
 
 
-def write_public_artifacts(
-    result: EdgeResult,
-    dest: Path | str,
-    *,
-    figure_name: str,
-) -> dict[str, Path]:
-    target = Path(dest)
-    figures = target / "figures"
-    figures.mkdir(parents=True, exist_ok=True)
-    csv_path = target / "qualifying_games.csv"
-    png_path = figures / figure_name
-    result.secondary["qualifying_games"].to_csv(csv_path, index=False)
-    figure = chart_for_result(result)
-    figure.savefig(png_path, dpi=160, bbox_inches="tight", facecolor="white")
-    plt.close(figure)
-    return {"qualifying_games": csv_path, "chart": png_path}
-
 EDGE_ID = "division-underdog"
 DEFAULT_TEAM = "PHI"
 DEFAULT_MIN_DOG_POINTS = 2.0
 DEFAULT_START_SEASON = 2016
-TREND_DIR = repo_root() / "trends" / "10-division-underdog"
-FIGURE_NAME = "ats-margin.png"
 QUALIFYING_COLUMNS = [
     "date",
     "season",

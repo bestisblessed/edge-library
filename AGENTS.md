@@ -16,6 +16,7 @@ cd ~/Code/edge-library && ./update_data.sh
 
 ## Layout
 
-- `Main.ipynb` — trend notebook
-- `scripts/` — trend scripts; they read CSVs under `data/`
+- `Main.ipynb` — master trend notebook; run the setup cell first
+- `scripts/` — source of truth for trend code; scripts read CSVs under `data/`
+- `images/` — images used by the notebook
 - `sbbreakers/` — SBBreakers dictionary notes (not scraper data)

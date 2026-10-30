@@ -19,13 +19,18 @@ saved.
 
 - `Main.ipynb` — NFL Edge Dictionary notebook
 - `scripts/` — trend scripts (read `data/`)
+- `images/` — notebook images
 - `data/` — committed snapshot of nfl-ai scraper masters
 - `sbbreakers/` — SBBreakers trend dictionary notes
 - `update_data.sh` — local refresh from `~/Code/nfl-ai`
 
 ## Run a trend
 
-Open `Main.ipynb` in Jupyter from the repository root and run a trend's cell.
+Open `Main.ipynb` in Jupyter from the repository root and run the first setup
+cell. Run the Detroit trend cell, select seasons (use Command/Ctrl for multiple
+selections), and click **Run trend**. Run a source-view cell and expand its
+output to see the current script.
+
 The Detroit trend displays a summary, expandable game details, and charts; it
 can also be run from the terminal with `python scripts/opponent_stats_after_DET.py`.
 Notebook output requires IPython, Matplotlib, pandas, and ipywidgets. The bye

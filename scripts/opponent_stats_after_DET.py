@@ -108,6 +108,7 @@ def parse_args() -> argparse.Namespace:
         default=[2022, 2023, 2024, 2025, 2026],
         help="NFL seasons to analyze (default: 2022 2023 2024 2025 2026)",
     )
+    parser.add_argument("--notebook", action="store_true", help="Display notebook tables and inline charts")
     return parser.parse_args()
 
 
@@ -453,7 +454,7 @@ def print_report(summary_rows: Sequence[dict[str, str]], detail_rows: Sequence[P
         )
 
 
-def show_charts(summary_rows: Sequence[dict[str, str]], rows: Sequence[PostLionsRow]) -> None:
+def show_charts(summary_rows: Sequence[dict[str, str]], rows: Sequence[PostLionsRow], *, notebook: bool = False) -> None:
     season_rows = [row for row in summary_rows if row["season"] != "Combined"]
     seasons = [row["season"] for row in season_rows]
     su_rates = []
@@ -461,8 +462,8 @@ def show_charts(summary_rows: Sequence[dict[str, str]], rows: Sequence[PostLions
     for row in season_rows:
         su_w, su_l, *_ = map(int, row["opponents_next_game_su"].split("-"))
         ats_w, ats_l, *_ = map(int, row["opponents_next_game_ats"].split("-"))
-        su_rates.append(su_w / (su_w + su_l))
-        ats_rates.append(ats_w / (ats_w + ats_l))
+        su_rates.append(su_w / (su_w + su_l) if su_w + su_l else math.nan)
+        ats_rates.append(ats_w / (ats_w + ats_l) if ats_w + ats_l else math.nan)
 
     ordered_rows = sorted(rows, key=lambda row: (row.next_game.played_on, row.next_game.game_id))
     fade_units = []
@@ -497,7 +498,40 @@ def show_charts(summary_rows: Sequence[dict[str, str]], rows: Sequence[PostLions
     )
 
     fig.tight_layout()
-    plt.show(block=True)
+    if notebook:
+        plt.show()
+    else:
+        plt.show(block=True)
+
+
+def show_notebook_tables(summary_rows: Sequence[dict[str, str]], rows: Sequence[PostLionsRow]) -> None:
+    """Display the same calculated results as a summary and expandable game tables."""
+    import pandas as pd
+    import ipywidgets as widgets
+    from IPython.display import display
+
+    summary = pd.DataFrame([{
+        "Season": row["season"], "Lions SU": row["lions_su"],
+        "Lions ATS": row["lions_ats"], "Opponents Next SU": row["opponents_next_game_su"],
+        "Opponents Next ATS": row["opponents_next_game_ats"],
+        "Fade Opponents ATS": row["fade_opponents_ats_record"],
+    } for row in summary_rows])
+    display(summary.style.hide(axis="index"))
+
+    details = pd.DataFrame([{
+        "Season": row.season, "Week vs DET": row.lions_game.week,
+        "Opponent": row.opponent, "Next Date": row.next_game.played_on,
+        "Next Opponent": row.next_game.opponent_of(row.opponent),
+        "Venue": row.next_game.venue_for(row.opponent).title(),
+        "SU": outcome(row.su_margin), "ATS": outcome(row.ats_margin, "P"),
+    } for row in rows], columns=["Season", "Week vs DET", "Opponent", "Next Date", "Next Opponent", "Venue", "SU", "ATS"])
+    tables = [("All", details)] + [(str(season), details[details["Season"] == season]) for season in sorted(details["Season"].unique())]
+    tabs = widgets.Tab(children=[widgets.HTML(value=f"<p>{len(table)} post-Lions games</p>" + table.to_html(index=False)) for _, table in tables])
+    for index, (label, _) in enumerate(tables):
+        tabs.set_title(index, label)
+    accordion = widgets.Accordion(children=[tabs], selected_index=None)
+    accordion.set_title(0, f"Post-Lions Detailed Games ({len(details)}) — click to expand")
+    display(accordion)
 
 
 def main() -> int:
@@ -514,8 +548,11 @@ def main() -> int:
         )
     summary_rows = summaries(available_seasons, lions_games, detail_rows)
 
-    print_report(summary_rows, detail_rows)
-    show_charts(summary_rows, detail_rows)
+    if args.notebook:
+        show_notebook_tables(summary_rows, detail_rows)
+    else:
+        print_report(summary_rows, detail_rows)
+    show_charts(summary_rows, detail_rows, notebook=args.notebook)
     return 0
 
 

@@ -34,12 +34,13 @@ after a Monday night game are 13 days (Sunday-to-Sunday bye is 14).
 From the edge-library repo root:
 
 ```bash
-python3 -m nfl_trends.rested_after_scoring
 python3 scripts/08_rested_after_scoring.py
-python3 -m nfl_trends.rested_after_scoring --team KC --min-rest-days 10
+python3 scripts/08_rested_after_scoring.py --team KC --min-rest-days 10
 ```
 
-The module writes:
+In `Main.ipynb`, run `%run scripts/08_rested_after_scoring.py --notebook`.
+
+Audited artifacts in this folder:
 
 - `trends/08-rested-after-scoring-totals/qualifying_games.csv`
 - `trends/08-rested-after-scoring-totals/figures/combined-points-vs-total.png`

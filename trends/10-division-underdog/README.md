@@ -25,12 +25,13 @@ DAL, NYG, PHI, WAS).
 From the edge-library repo root:
 
 ```bash
-python3 -m nfl_trends.division_underdog
 python3 scripts/10_division_underdog.py
-python3 -m nfl_trends.division_underdog --team DAL --min-dog-points 3 --site road
+python3 scripts/10_division_underdog.py --team DAL --min-dog-points 3 --site road
 ```
 
-Writes:
+In `Main.ipynb`, run `%run scripts/10_division_underdog.py --notebook`.
+
+Audited artifacts in this folder:
 
 - `trends/10-division-underdog/qualifying_games.csv`
 - `trends/10-division-underdog/figures/ats-margin.png`

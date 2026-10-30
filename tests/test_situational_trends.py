@@ -2,9 +2,15 @@ from pathlib import Path
 
 import pandas as pd
 
-from nfl_trends import after_under, division_underdog, home_underdog
-from nfl_trends.games import default_games_path, load_games, repo_root
-from nfl_trends.situational import expand_team_games
+from conftest import load_script
+
+home_underdog = load_script("09_home_underdog")
+division_underdog = load_script("10_division_underdog")
+after_under = load_script("11_after_under")
+default_games_path = home_underdog.default_games_path
+load_games = home_underdog.load_games
+repo_root = home_underdog.repo_root
+expand_team_games = home_underdog.expand_team_games
 
 
 REPO = repo_root()

@@ -23,12 +23,13 @@ Audit of the KillerSports / SportsBook Breakers claim posted 26 Oct 2026:
 From the edge-library repo root:
 
 ```bash
-python3 -m nfl_trends.after_under
 python3 scripts/11_after_under.py
-python3 -m nfl_trends.after_under --team KC --min-under-margin 7 --allow-cross-season-prior
+python3 scripts/11_after_under.py --team KC --min-under-margin 7 --allow-cross-season-prior
 ```
 
-Writes:
+In `Main.ipynb`, run `%run scripts/11_after_under.py --notebook`.
+
+Audited artifacts in this folder:
 
 - `trends/11-after-under/qualifying_games.csv`
 - `trends/11-after-under/figures/ats-margin.png`

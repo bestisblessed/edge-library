@@ -40,12 +40,13 @@ cut reproduces 0-9 SU / 2-7 ATS.
 From the edge-library repo root:
 
 ```bash
-python3 -m nfl_trends.home_underdog
 python3 scripts/09_home_underdog.py
-python3 -m nfl_trends.home_underdog --team NYG --start-season 2021 --min-spread 3
+python3 scripts/09_home_underdog.py --team NYG --start-season 2021 --min-spread 3
 ```
 
-Writes:
+In `Main.ipynb`, run `%run scripts/09_home_underdog.py --notebook`.
+
+Audited artifacts in this folder:
 
 - `trends/09-home-underdog/qualifying_games.csv`
 - `trends/09-home-underdog/figures/ats-margin.png`

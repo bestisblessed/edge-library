@@ -2,17 +2,24 @@ import pandas as pd
 import pytest
 from matplotlib import pyplot as plt
 
-from nfl_trends import after_under, division_underdog, home_underdog, rested_after_scoring
-from nfl_trends.charts import chart_for_result
-from nfl_trends.games import SITUATIONAL_MINIMUM_SEASON, default_games_path, load_games
-from nfl_trends.models import EdgeResult
-from nfl_trends.situational import write_public_artifacts
+from conftest import load_script
 from test_rested_after_scoring import rested_after_scoring_games
 from test_situational_trends import (
     after_under_games,
     division_underdog_games,
     home_underdog_games,
 )
+
+rested_after_scoring = load_script("08_rested_after_scoring")
+home_underdog = load_script("09_home_underdog")
+division_underdog = load_script("10_division_underdog")
+after_under = load_script("11_after_under")
+chart_for_result = rested_after_scoring.chart_for_result
+write_public_artifacts = home_underdog.write_public_artifacts
+EdgeResult = rested_after_scoring.EdgeResult
+SITUATIONAL_MINIMUM_SEASON = rested_after_scoring.SITUATIONAL_MINIMUM_SEASON
+default_games_path = rested_after_scoring.default_games_path
+load_games = rested_after_scoring.load_games
 
 
 def test_every_ported_trend_runs_and_produces_a_labeled_primary_chart():

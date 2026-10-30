@@ -2,13 +2,14 @@ import math
 
 import pandas as pd
 
-from nfl_trends.metrics import (
-    flat_bet_profit,
-    grade_home_spread,
-    grade_totals,
-    summarize_binary_market,
-    wilson_interval,
-)
+from conftest import load_script
+
+_metrics = load_script("08_rested_after_scoring")
+flat_bet_profit = _metrics.flat_bet_profit
+grade_home_spread = _metrics.grade_home_spread
+grade_totals = _metrics.grade_totals
+summarize_binary_market = _metrics.summarize_binary_market
+wilson_interval = _metrics.wilson_interval
 
 
 def test_grade_totals_marks_over_under_and_push():

@@ -2,8 +2,12 @@ from pathlib import Path
 
 import pandas as pd
 
-from nfl_trends import rested_after_scoring
-from nfl_trends.games import default_games_path, load_games, repo_root
+from conftest import load_script
+
+rested_after_scoring = load_script("08_rested_after_scoring")
+default_games_path = rested_after_scoring.default_games_path
+load_games = rested_after_scoring.load_games
+repo_root = rested_after_scoring.repo_root
 
 REPO_ROOT = repo_root()
 

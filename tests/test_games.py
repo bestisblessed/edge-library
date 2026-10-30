@@ -3,13 +3,13 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from nfl_trends import games as games_module
-from nfl_trends.games import (
-    default_games_path,
-    latest_season_split,
-    load_games,
-    repo_root,
-)
+from conftest import load_script
+
+games_module = load_script("08_rested_after_scoring")
+default_games_path = games_module.default_games_path
+latest_season_split = games_module.latest_season_split
+load_games = games_module.load_games
+repo_root = games_module.repo_root
 
 
 def write_csv(tmp_path: Path, name: str, rows: list[dict]) -> Path:
